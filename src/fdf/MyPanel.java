@@ -3,7 +3,6 @@ import java.lang.Math.*;
 import java.awt.*;
 import java.awt.image.*;
 import javax.swing.*;
-//import src.vector.*;
 
 public class MyPanel extends JPanel
 {
@@ -12,6 +11,10 @@ public class MyPanel extends JPanel
 	private int w = 0;
 	private int h = 0;
 	private OriginVector coord[][];
+	private double maxY = 0;
+	private double maxX = 0;
+	private double minY = 0;
+	private double minX = 0;
 
 	public MyPanel()
 	{
@@ -20,6 +23,10 @@ public class MyPanel extends JPanel
 		this.w = map.getWidth();
 		this.h = map.getHeight();
 		coord = map.getCoord();
+		this.maxX = map.getMaxX();
+		this.minX = map.getMinX();
+		this.maxY = map.getMaxY();
+		this.minY = map.getMinY();
 	}
 
 	public void paint(Graphics g)
@@ -54,6 +61,10 @@ public class MyPanel extends JPanel
 			}
 				System.out.print("\n");
 		}
+		System.out.println("max x = " + maxX);
+		System.out.println("min x = " + minX);
+		System.out.println("max Y = " + maxY);
+		System.out.println("min Y = " + minY);
 		g.drawImage(img, 0, 0, null);
 		System.out.println("Draw is done !");
 	}
@@ -68,6 +79,7 @@ public class MyPanel extends JPanel
 		double incrY = y / step;
 		double posX = a.getX();
 		double posY = a.getY();
+		System.out.println("\t step =" + step);
 		for (int i = 0; i < (int)step; i++)
 		{
 			posX += incrX;

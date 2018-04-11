@@ -28,7 +28,7 @@ public class OriginVector
 	{
 		double ret;
 
-		ret = (Math.sqrt(2.0d) / 2.0d) * (this.posX - this.posY);
+		ret = (Math.sqrt(2) / 2.0) * (this.posX - this.posY);
 		return (ret);
 	}
 
@@ -36,8 +36,7 @@ public class OriginVector
 	{
 		double ret;
 
-		ret = (Math.sqrt(2.0d / 3.0d) * this.posZ);
-		ret -= ((1.0 / Math.sqrt(6.0d)) * (this.posX + this.posY));
+		ret = (Math.sqrt(2 / 3.0) * this.posZ) - ((1.0 / Math.sqrt(6)) * (this.posX + this.posY));
 		
 		return (ret);
 	}
@@ -51,4 +50,10 @@ public class OriginVector
 		
 		return (ret);
 	}
+/*
+	public void normalize(double minX, double maxX, double minY, double maxY)
+	{
+		this.posX = ((this.posX - minX) / (maxX - minX)) * (double)(750 - 1);	
+		this.posY = ((this.posY - minY) / (maxY - minY)) * (double)(750 - 1);	
+	}*/
 }

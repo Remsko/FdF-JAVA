@@ -7,19 +7,37 @@ public class Map
 	protected int width = this.map[0].length;
 	protected OriginVector coord[][] =
 		new OriginVector[this.height][this.width];
-
-	public Map()
-	{
-	}
+	protected double maxX = 0;
+	protected double maxY = 0;
+	protected double minX = 1000000;
+	protected double minY = 1000000;
 	
-	public int getHeight()
-	{
-		return (this.height);
-	}
+	public Map() {}
+	
+	public int getHeight() { return (this.height); }
+	public int getWidth() { return (this.width); }
+	public double getMaxX() { return (this.maxX); }
+	public double getMinX() { return (this.minX); }
+	public double getMaxY() { return (this.maxY); }
+	public double getMinY() { return (this.minY); }
 
-	public int getWidth()
+
+	private void getExtremum(double x, double y)
 	{
-		return (this.width);
+		if (x == 0.0 && y == 0.0)
+		{
+			this.minX = x;
+			this.minY = y;
+			this.maxX = x;
+			this.maxY = y;
+		}
+		else
+		{
+			this.minX = x < this.minX ? x : this.minX;
+			this.minY = y < this.minY ? y : this.minY;
+			this.maxX = x > this.maxX ? x : this.maxX;
+			this.maxY = y > this.maxY ? y : this.maxY;
+		}
 	}
 
 	public OriginVector[][] getCoord()
@@ -33,7 +51,10 @@ public class Map
                                 z = (double)this.map[y][x];
                                 OriginVector tmp = new OriginVector(x * 10d, y * 10d, z * 10d);
                                 this.coord[y][x] = tmp.Projection();
-
+				System.out.println("x coord = " + this.coord[y][x].getX());
+				System.out.println("y coord = " + this.coord[y][x].getY());
+				this.getExtremum(this.coord[y][x].getX(),
+						this.coord[y][x].getY());
                         }
                 }
 		return (this.coord);
