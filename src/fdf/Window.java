@@ -21,21 +21,4 @@ public class Window extends JFrame
 		
 		c.add(panel);
 	}
-
-	public Window(OriginVector Coord[][], int w, int h)
-	{
-		super();
-
-                this.setTitle("FdF JAVA version 1.0");
-                this.setLocationRelativeTo(null);
-                this.setResizable(false);
-                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-                JPanel panel = new MyPanel(Coord, w, h);
-                panel.setPreferredSize(new Dimension(750, 750));
-
-                c.add(panel);
-		System.out.println("Window is good");
-	}
-
 }

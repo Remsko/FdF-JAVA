@@ -16,19 +16,11 @@ public class MyPanel extends JPanel
 	public MyPanel()
 	{
 		super();
-		this.w = this.getWidth();
-		this.h = this.getHeight();
+		Map map = new Map();
+		this.w = map.getWidth();
+		this.h = map.getHeight();
+		coord = map.getCoord();
 	}
-
-	public MyPanel(OriginVector coord[][], int w, int h)
-	{
-		super();
-		this.w = w;
-		this.h = h;
-		this.coord = coord;
-		System.out.println("MyPanel is good");
-	}
-
 
 	public void paint(Graphics g)
 	{
@@ -57,8 +49,8 @@ public class MyPanel extends JPanel
 				if (y > 0)
 					drawLine(this.coord[y][x], this.coord[y - 1][x]);
 
-//				System.out.print("\t");
-//				System.out.println(coord[y][x].getZ());
+				System.out.print("\t");
+				System.out.println(coord[y][x].getZ());
 			}
 				System.out.print("\n");
 		}

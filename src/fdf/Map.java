@@ -2,15 +2,15 @@ package src.fdf;
 
 public class Map
 {
-	private int map[][] = this.getMap();
-	private int height = map.length;
-	private int width = map[0].length;
-	private OriginVector coord[][] = new OriginVector[height][width];
-	private double z = 0;
-	private double min = 0;
-	private double max = 0;
+	protected int map[][] = this.getMap();
+	protected int height = this.map.length;
+	protected int width = this.map[0].length;
+	protected OriginVector coord[][] =
+		new OriginVector[this.height][this.width];
 
-	public Map() {}
+	public Map()
+	{
+	}
 	
 	public int getHeight()
 	{
@@ -24,21 +24,23 @@ public class Map
 
 	public OriginVector[][] getCoord()
 	{
-		for (int y = 0; y < height; y++)
+		double z = 0;
+
+                for (int y = 0; y < this.height; y++)
                 {
-                        for (int x = 0; x < width; x++)
+                        for (int x = 0; x < this.width; x++)
                         {
                                 z = (double)this.map[y][x];
                                 OriginVector tmp = new OriginVector(x * 10d, y * 10d, z * 10d);
                                 this.coord[y][x] = tmp.Projection();
-				
+
                         }
                 }
 		return (this.coord);
 	}
 
 	/* map = z positions */
-	private static int[][] getMap()
+	private int[][] getMap()
 	{
 		int map[][] = {{50, 50 ,50, 50, 50, 50, 50},
                         {40, 30, 30, 30, 20, 30, 30, 40},
