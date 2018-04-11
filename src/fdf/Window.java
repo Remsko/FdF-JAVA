@@ -1,0 +1,41 @@
+package src.fdf;
+import java.awt.*;
+import java.awt.image.*;
+import javax.swing.*;
+
+public class Window extends JFrame
+{
+	Container c = getContentPane();
+
+	public Window()
+	{
+		super();
+
+		this.setTitle("FdF JAVA version 1.0");
+		this.setLocationRelativeTo(null);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new MyPanel();
+		panel.setPreferredSize(new Dimension(750, 750));
+		
+		c.add(panel);
+	}
+
+	public Window(OriginVector Coord[][])
+	{
+		super();
+
+                this.setTitle("FdF JAVA version 1.0");
+                this.setLocationRelativeTo(null);
+                this.setResizable(false);
+                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                JPanel panel = new MyPanel(Coord);
+                panel.setPreferredSize(new Dimension(750, 750));
+
+                c.add(panel);
+		System.out.println("Window is good");
+	}
+
+}
