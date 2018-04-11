@@ -51,6 +51,7 @@ public class MyPanel extends JPanel
 		{
 			for (x = 0; x < this.w; x++)
 			{
+				coord[y][x].normalize(this.minX, this.maxX, this.minY, this.maxY);
 				if (x > 0)
 					drawLine(this.coord[y][x], this.coord[y][x - 1]);
 				if (y > 0)
@@ -84,11 +85,9 @@ public class MyPanel extends JPanel
 		{
 			posX += incrX;
 			posY += incrY;
-		}
-		posX = Math.floor(posX);
-		posY = Math.floor(posY);
-		this.color = Color.WHITE.getRGB();
-		if ((int)posX < (int)(this.getWidth() - 1) && (int)posX > 0 && (int)posY < (int)(this.getHeight() - 1) && (int)posY > 0)
+			this.color = Color.WHITE.getRGB();
+			if ((int)posX < (int)(this.getWidth() - 1) && (int)posX > 0 && (int)posY < (int)(this.getHeight() - 1) && (int)posY > 0)
 			this.img.setRGB((int)posX, (int)posY, this.color);
+		}
 	}
 }

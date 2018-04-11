@@ -50,10 +50,10 @@ public class OriginVector
 		
 		return (ret);
 	}
-/*
+
 	public void normalize(double minX, double maxX, double minY, double maxY)
 	{
 		this.posX = ((this.posX - minX) / (maxX - minX)) * (double)(750 - 1);	
 		this.posY = ((this.posY - minY) / (maxY - minY)) * (double)(750 - 1);	
-	}*/
+	}
 }
