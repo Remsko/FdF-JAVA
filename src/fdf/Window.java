@@ -22,7 +22,7 @@ public class Window extends JFrame
 		c.add(panel);
 	}
 
-	public Window(OriginVector Coord[][])
+	public Window(OriginVector Coord[][], int w, int h)
 	{
 		super();
 
@@ -31,7 +31,7 @@ public class Window extends JFrame
                 this.setResizable(false);
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                JPanel panel = new MyPanel(Coord);
+                JPanel panel = new MyPanel(Coord, w, h);
                 panel.setPreferredSize(new Dimension(750, 750));
 
                 c.add(panel);

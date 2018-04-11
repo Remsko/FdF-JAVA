@@ -11,9 +11,9 @@ public class OriginVector
 
 	public OriginVector(double x, double y, double z)
 	{
-		this.posX = x * 10.0d;
-		this.posY = y * 10.0d; /* 10 = taille des "cases" */
-		this.posZ = z * 10.0d;
+		this.posX = x;
+		this.posY = y; /* 10 = taille des "cases" */
+		this.posZ = z;
 	}
 
 	public double getX() { return this.posX; }

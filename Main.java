@@ -5,7 +5,7 @@ public class Main
 	public static void main(String args[])
 	{
 
-		int map[][] = get_map();
+/*		int map[][] = get_map();
 		int height = map.length;
 		int width = map[0].length;
 		double z = 0;
@@ -21,7 +21,11 @@ public class Main
 				Coord[y][x] = tmp.Projection();
 			}
 		}
-		Window win = new Window(Coord);
+*/
+		Map map = new Map();
+		Window win = new Window(map.getCoord(),
+					map.getWidth(),
+					map.getHeight());
 		win.pack();
 		win.setVisible(true);
 	}
