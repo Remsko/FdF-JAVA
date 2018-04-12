@@ -51,30 +51,31 @@ public class Map
                                 z = (double)this.map[y][x];
                                 OriginVector tmp = new OriginVector(x * 10d, y * 10d, z * 10d);
                                 this.coord[y][x] = tmp.Projection();
-				System.out.println("x coord = " + this.coord[y][x].getX());
-				System.out.println("y coord = " + this.coord[y][x].getY());
-				this.getExtremum(this.coord[y][x].getX(),
-						this.coord[y][x].getY());
+								this.getExtremum(this.coord[y][x].getX(), this.coord[y][x].getY());
                         }
                 }
 		return (this.coord);
 	}
 
-	/* map = z positions */
 	private int[][] getMap()
 	{
-		int map[][] = {{50, 50 ,50, 50, 50, 50, 50},
+		int map[][] = /*{{50, 50 ,50, 50, 50, 50, 50},
                         {40, 30, 30, 30, 20, 30, 30, 40},
                         {30, 10, 10, 10, 10, 10, 10, 30},
                         {20, 20, 20, 20, 0, 20, 20, 20},
-                        {10, 0, 0, 0, 0, 0, 0, 0, 10}};
+                        {10, 0, 0, 0, 0, 0, 0, 0, 10}};*/
 
+		{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 10, 10, 0, 0, 10, 10, 0, 0, 0, 10, 10, 10, 10, 10, 0, 0, 0},
+			{0, 0, 10, 10, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0},
+			{0, 0, 10, 10, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0},
+			{0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0, 0, 10, 10, 10, 10, 0, 0, 0},
+			{0, 0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
                 return (map);
 	}
-
-/*	public static OriginVector normalize(OriginVector o, int w, int h)
-	{
-		
-	}
-*/
 }

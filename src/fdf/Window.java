@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Window extends JFrame
 {
 	Container c = getContentPane();
-
+	
 	public Window()
 	{
 		super();
@@ -17,8 +17,7 @@ public class Window extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JPanel panel = new MyPanel();
-		panel.setPreferredSize(new Dimension(750, 750));
-		
+		panel.setPreferredSize(new Dimension(1000, 1000));
 		c.add(panel);
 	}
 }

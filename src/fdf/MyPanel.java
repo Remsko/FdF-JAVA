@@ -41,12 +41,10 @@ public class MyPanel extends JPanel
 		{
 			for (int imgY = 0; imgY < tmpH; imgY++)
 			{
-				this.color = Color.BLACK.getRGB();
+				this.color = Color.WHITE.getRGB();
 				this.img.setRGB(imgX, imgY, this.color);
 			}
 		}
-		System.out.println("get width = " + w);
-		System.out.println("get height = " + h);
 		for (y = 0; y < this.h; y++)
 		{
 			for (x = 0; x < this.w; x++)
@@ -57,20 +55,12 @@ public class MyPanel extends JPanel
 				if (y > 0)
 					drawLine(this.coord[y][x], this.coord[y - 1][x]);
 
-				System.out.print("\t");
-				System.out.println(coord[y][x].getZ());
 			}
-				System.out.print("\n");
 		}
-		System.out.println("max x = " + maxX);
-		System.out.println("min x = " + minX);
-		System.out.println("max Y = " + maxY);
-		System.out.println("min Y = " + minY);
-		g.drawImage(img, 0, 0, null);
 		System.out.println("Draw is done !");
+		g.drawImage(img, 0, 0, null);
 	}
 
-	/* line algo */
 	private void drawLine(OriginVector a, OriginVector b)
 	{
 		double x = b.getX() - a.getX();
@@ -80,14 +70,13 @@ public class MyPanel extends JPanel
 		double incrY = y / step;
 		double posX = a.getX();
 		double posY = a.getY();
-		System.out.println("\t step =" + step);
 		for (int i = 0; i < (int)step; i++)
 		{
 			posX += incrX;
 			posY += incrY;
-			this.color = Color.WHITE.getRGB();
-			if ((int)posX < (int)(this.getWidth() - 1) && (int)posX > 0 && (int)posY < (int)(this.getHeight() - 1) && (int)posY > 0)
-			this.img.setRGB((int)posX, (int)posY, this.color);
+			this.color = Color.BLACK.getRGB();
+			if ((int)Math.floor(posX) < (int)(this.getWidth()) && (int)Math.floor(posX) > 0 && (int)Math.floor(posY) < (int)(this.getHeight()) && (int)Math.floor(posY) > 0)
+				this.img.setRGB((int)Math.floor(posX), (int)Math.floor(posY), this.color);
 		}
 	}
 }
